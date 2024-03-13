@@ -1,9 +1,6 @@
 ﻿
 // crie um programa para calcularo imc de uma pessoa
 // imc = peso / altura * altura
-
-using ConceitosBasicos;
-
 bool prossiga = true;
 do
 {
@@ -13,10 +10,8 @@ do
         float altura = float.Parse(Console.ReadLine());
         Console.WriteLine("Informe o peso:");
         float peso = float.Parse(Console.ReadLine());
-        var calculadoraIMC = new CalculadoraIMC();
-        
-        Console.WriteLine(calculadoraIMC.Calcular(peso, altura));
-
+        float imc = peso / (altura * altura);
+        Console.WriteLine($"O imc calculado foi {imc:f1}");
         prossiga = false;
 
     }
@@ -24,8 +19,6 @@ do
     {
         Console.WriteLine("Informe apenas numeros");
     }
-    catch (DivideByZeroException e) { }
-
-} while (prossiga);
+    catch(DivideByZeroException e) { }while (prossiga);
 
 
